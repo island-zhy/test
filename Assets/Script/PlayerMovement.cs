@@ -3,33 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-  public float speed;
-  new private Rigidbody rigidbody;
-  private Animator animator;
-  private float inputX, inputY;
-  private float stopX, stopY;
+  [SerializeField]
+  private float _speed;
+
+  [SerializeField]
+  private MapController _mapController;
+
+  private Rigidbody m_playerRigidbody ;
+  private float m_inputX, m_inputZ;
+  private float m_mapX, m_mapY;
 
   void Start() {
-    rigidbody = GetComponent<Rigidbody>();
-    animator = GetComponent<Animator>();
+    m_playerRigidbody = GetComponent<Rigidbody>();
   }
 
   void Update() {
-    this.transform.rotation = Camera.main.transform.rotation;
-    inputX = Input.GetAxisRaw("Horizontal");
-    inputY = Input.GetAxisRaw("Vertical");
-    Vector2 input = (transform.right * inputX + transform.up * inputY).normalized;
-    rigidbody.velocity = input * speed;
+    m_inputX = Input.GetAxisRaw("Horizontal");
+    m_inputZ = Input.GetAxisRaw("Vertical");
+    Vector3 input = new Vector3(m_inputX, 0, m_inputZ) * _speed;
+    m_playerRigidbody.velocity = input;
+  }
 
-    if (input != Vector2.zero) {
-      animator.SetBool("isMoving", true);
-      stopX = inputX;
-      stopY = inputY;
-    } else {
-      animator.SetBool("isMoving", false);
-    }
-    animator.SetFloat("InputX", stopX);
-    animator.SetFloat("InputY", stopY);
-
-  } 
+  private void _PlayerPlaceInMap() {
+    
+  }
 }

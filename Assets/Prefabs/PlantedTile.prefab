@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4424599755591114}
   - component: {fileID: 212570378405348528}
-  - component: {fileID: 114197953940819828}
   - component: {fileID: 65852378628507210}
+  - component: {fileID: 114695045526257538}
   m_Layer: 0
-  m_Name: WaitForDig
+  m_Name: PlantedTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.15, y: 9.140002, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114197953940819828
+--- !u!114 &114695045526257538
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -62,12 +62,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1073218813376532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e4080168e45a241ba30c259e5596f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 795b6a73d5066b84e9c40526b1f9afee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: f6b6c5c4fb5d91f409291345853f80ec, type: 3}
-  sprite2: {fileID: 21300000, guid: 731fb7507ca91ca4aa1fdf0c3f6aa72b, type: 3}
-  sprite3: {fileID: 21300000, guid: f79171ebdc192314ea564d77dcb6a3bf, type: 3}
+  m_mapProperty: 1
+  _plantedSprite: {fileID: 21300000, guid: f79171ebdc192314ea564d77dcb6a3bf, type: 3}
 --- !u!212 &212570378405348528
 SpriteRenderer:
   m_ObjectHideFlags: 1

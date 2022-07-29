@@ -15,6 +15,23 @@ public class PlayerTile : MonoBehaviour{
 	private int m_col;
 	private MapObject[,] m_mapInScene;
 
+	public int row {
+		get {
+			return m_row;
+		}
+		set {
+			m_row = value;
+		}
+	}
+	public int col {
+		get {
+			return m_col;
+		}
+		set {
+			m_col = value;
+		}
+	}
+
 	private void _UpdatePlayRowAndCol() {
 		m_row = Mathf.RoundToInt(this.transform.position.x * m_mapSprite.pixelsPerUnit * m_mapController.mapScaleX / m_mapSprite.texture.width);
 		m_col = Mathf.RoundToInt(this.transform.position.z * m_mapSprite.pixelsPerUnit * m_mapController.mapScaleY / m_mapSprite.texture.height);

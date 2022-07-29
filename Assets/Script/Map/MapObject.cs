@@ -37,7 +37,7 @@ public class MapObject : MonoBehaviour {
 	public MAP_PROPERTY m_mapProperty = MAP_PROPERTY.EMPTY;
 
 
-	public virtual void EnterInteractable() {
+	public virtual void OverInteractable() {
 		
 	}
 	public virtual void ExitInteractable() {	
@@ -47,8 +47,8 @@ public class MapObject : MonoBehaviour {
 		
 	}
 
-	void OnMouseEnter() {
-		EnterInteractable();
+	void OnMouseOver() {
+		OverInteractable();
 	}
 
 	void OnMouseExit() {

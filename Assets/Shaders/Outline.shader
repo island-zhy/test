@@ -1,5 +1,4 @@
 ﻿// ---------------------------【2D 描边效果】---------------------------
-// create by 长生但酒狂
 Shader "lcl/shader2D/outline"
 {
     Properties
@@ -16,6 +15,8 @@ Shader "lcl/shader2D/outline"
             "Queue" = "Transparent"
         }
         Blend SrcAlpha OneMinusSrcAlpha
+
+        Cull Off
  
         Pass
         {

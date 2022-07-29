@@ -17,6 +17,7 @@ public class MapObject : MonoBehaviour {
 	protected List<Material> m_materialList;
 	private float m_height;
 	protected Shader m_standardShader;
+	protected Texture m_texture;
 
 	private int m_row;
 	private int m_col;
@@ -63,6 +64,7 @@ public class MapObject : MonoBehaviour {
 		if (Mathf.Abs(m_playerTile.row - row) <= 1 && Mathf.Abs(m_playerTile.col - col) <= 1) {
 			foreach (Material material in m_materialList) {
 				material.shader = m_shader;
+				material.SetTexture("_MainTex", m_texture);
 				material.SetColor("_lineColor", out_color);
 				material.SetInt("_lineWidth", out_width);
 			}
@@ -107,6 +109,9 @@ public class MapObject : MonoBehaviour {
 			}
 		}
 		m_standardShader = m_materialList[0].shader;
+		m_texture = m_materialList[0].mainTexture;
+		out_color = Color.green;
+		out_width = 2;
 	}
 
 }

@@ -11,8 +11,14 @@ public class BedTile : MapObject {
     if (this.height == m_playerTile.height) {
       if (Mathf.Abs(m_playerTile.row - row) <= 3 && Mathf.Abs(m_playerTile.col - col) <= 1) {
         m_material.shader = m_shader;
+        m_material.SetColor("_lineColor", out_color);
+        m_material.SetInt("_lineWidth", out_width);
         m_material2.shader = m_shader;
+        m_material2.SetColor("_lineColor", out_color);
+        m_material2.SetInt("_lineWidth", out_width);
         m_material3.shader = m_shader;
+        m_material3.SetColor("_lineColor", out_color);
+        m_material3.SetInt("_lineWidth", out_width);
       } else {
         m_material.shader = m_standardShader;
         m_material2.shader = m_standardShader;

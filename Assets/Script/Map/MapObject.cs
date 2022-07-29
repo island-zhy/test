@@ -6,6 +6,11 @@ public class MapObject : MonoBehaviour {
 
 	[SerializeField]
 	protected Shader m_shader;
+  [SerializeField]
+	protected Color out_color;
+  [SerializeField]
+	[Range(0, 10)]
+	protected int out_width;
 
 	protected GameObject m_player;
 	protected PlayerTile m_playerTile;
@@ -58,6 +63,8 @@ public class MapObject : MonoBehaviour {
 		if (height == m_playerTile.height) {
 			if (Mathf.Abs(m_playerTile.row - row) <= 1 && Mathf.Abs(m_playerTile.col - col) <= 1) {
 				m_material.shader = m_shader;
+				m_material.SetColor("_lineColor", out_color);
+				m_material.SetInt("_lineWidth", out_width);
 			} else {
 				m_material.shader = m_standardShader;
 			}

@@ -12,9 +12,11 @@ public class LadderTile : MapObject {
       if (m_ifUpFloor) {
         m_ifUpFloor = false;
         m_player.transform.position = new Vector3(row, 0f, col);
+        m_playerTile.height = 0f;
       } else {
         m_ifUpFloor = true;
         m_player.transform.position = new Vector3(row - 1, 1.5f, col);
+        m_playerTile.height = 1.5f;
       }
     }
   }

@@ -14,7 +14,7 @@ public class MapObject : MonoBehaviour {
 
 	protected GameObject m_player;
 	protected PlayerTile m_playerTile;
-	protected Material m_material;
+	protected List<Material> m_materialList;
 	private float m_height;
 	protected Shader m_standardShader;
 
@@ -62,16 +62,22 @@ public class MapObject : MonoBehaviour {
 	public virtual void OverInteractable() {
 		if (height == m_playerTile.height) {
 			if (Mathf.Abs(m_playerTile.row - row) <= 1 && Mathf.Abs(m_playerTile.col - col) <= 1) {
-				m_material.shader = m_shader;
-				m_material.SetColor("_lineColor", out_color);
-				m_material.SetInt("_lineWidth", out_width);
+				foreach (Material material in m_materialList) {
+					material.shader = m_shader;
+					material.SetColor("_lineColor", out_color);
+					material.SetInt("_lineWidth", out_width);
+				}
 			} else {
-				m_material.shader = m_standardShader;
+				foreach (Material material in m_materialList) {
+					material.shader = m_standardShader;
+				}
 			}
 		}
 	}
 	public virtual void ExitInteractable() {
-		m_material.shader = m_standardShader;
+		foreach (Material material in m_materialList) {
+			material.shader = m_standardShader;
+		}
 	}
 	public virtual void UpInteractable() {
 		
@@ -93,8 +99,16 @@ public class MapObject : MonoBehaviour {
 	public virtual void Start() {
 		m_player = GameObject.FindGameObjectWithTag("Player");
 		m_playerTile = m_player.GetComponent<PlayerTile>();
-		m_material = GetComponent<SpriteRenderer>().material;
-		m_standardShader = m_material.shader;
+		m_materialList = new List<Material>();
+		if (this.transform.childCount == 0) {
+			m_materialList.Add(this.GetComponent<SpriteRenderer>().material);
+		} else {
+			Debug.Log(name);
+			for (int i = 0; i < this.transform.childCount; i++) {
+				m_materialList.Add(this.transform.GetChild(i).GetComponent<SpriteRenderer>().material);
+			}
+		}
+		m_standardShader = m_materialList[0].shader;
 	}
 
 }

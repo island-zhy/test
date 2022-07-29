@@ -37,20 +37,19 @@ public class MapObject : MonoBehaviour {
 	public MAP_PROPERTY m_mapProperty = MAP_PROPERTY.EMPTY;
 
 
-	// Use this for initialization
-	void Start () {
-	}
-
+	//鼠标移到上面后的交互
 	public virtual void EnterInteractable() {
-		
+		//高亮显示
 	}
 
-	public virtual void UpInteractable() {
-		
-	}
 
 	public virtual void ExitInteractable() {
+		//取消高亮
+	}
 
+
+	public virtual void UpInteractable() {
+		//正常的交互逻辑
 	}
 
 	void OnMouseEnter() {
@@ -63,6 +62,10 @@ public class MapObject : MonoBehaviour {
 
 	void OnMouseUp() {
 		UpInteractable();
+	}
+
+	// Use this for initialization
+	void Start() {
 	}
 
 }

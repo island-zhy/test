@@ -9,6 +9,7 @@ public class PlayerTile : MonoBehaviour{
 	[SerializeField]
 	private int _interactRange = 1;
 
+	private float m_hegiht;
 	private Sprite m_mapSprite;
 	private MapController m_mapController;
 	private int m_row;
@@ -29,6 +30,15 @@ public class PlayerTile : MonoBehaviour{
 		}
 		set {
 			m_col = value;
+		}
+	}
+
+	public float height {
+		get {
+			return m_hegiht;
+		}
+		set {
+			m_hegiht = value;
 		}
 	}
 

@@ -20,17 +20,4 @@ public class PlayerController : MonoBehaviour {
 		this.GetComponent<Rigidbody>().velocity = new Vector3(inputX, 0, inputZ) * _speed;
 	}
 
-	void OnTriggerStay(Collider collision) {
-		if (Input.GetKeyDown(KeyCode.U)) {
-			if (collision.gameObject.tag.Equals("Floor")) {
-				if (!m_ifUpFloor) {
-					this.transform.position = this.transform.position + new Vector3(0, 1.5f, 0);
-					m_ifUpFloor = true;
-				} else {
-					this.transform.position = this.transform.position + new Vector3(0, -1.5f, 0);
-					m_ifUpFloor = false;
-				}
-			}
-		}
-	}
 }

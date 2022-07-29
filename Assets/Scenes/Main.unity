@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 470339065}
   - component: {fileID: 470339064}
+  - component: {fileID: 470339066}
   m_Layer: 0
   m_Name: BackWall
   m_TagString: Untagged
@@ -284,12 +285,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 470339063}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -11.808025, y: 3.0809588, z: -0.019233704}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.811, y: 3.081, z: -0.019233704}
+  m_LocalScale: {x: 1, y: 1.7266681, z: 1}
   m_Children: []
   m_Father: {fileID: 171032377}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 180, y: 180, z: 90}
+--- !u!65 &470339066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 470339063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.984376, y: 11.000003, z: 0}
+  m_Center: {x: 0, y: -0.0000009536743, z: 0}
 --- !u!1 &791143721
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +585,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 908fe5e4a5f2b8240ad9e4566f92993e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -728,7 +741,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1365064889
 GameObject:
@@ -994,6 +1007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576155365}
   - component: {fileID: 1576155366}
+  - component: {fileID: 1576155367}
   m_Layer: 0
   m_Name: RightWall
   m_TagString: Untagged
@@ -1058,6 +1072,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!65 &1576155367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576155364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.984375, y: 11, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1647092407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647092409}
   - component: {fileID: 1647092408}
+  - component: {fileID: 1647092410}
   m_Layer: 0
   m_Name: LeftWall
   m_TagString: Untagged
@@ -1131,6 +1158,18 @@ Transform:
   m_Father: {fileID: 171032377}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
+--- !u!65 &1647092410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647092407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.984375, y: 11, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1714582797
 GameObject:
   m_ObjectHideFlags: 0

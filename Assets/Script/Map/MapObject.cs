@@ -7,9 +7,12 @@ public class MapObject : MonoBehaviour {
 
 	private int m_row;
 	private int m_col;
+	//private bool m_ifOnSecondFloor;
 	public enum MAP_PROPERTY {
     EMPTY = 0,
 		PLANT = 1,
+		LADDER1 = 2,
+		LADDER2 = 3,
 	}
 
 	public int row {
@@ -30,10 +33,36 @@ public class MapObject : MonoBehaviour {
 		}
 	}
 
+
 	public MAP_PROPERTY m_mapProperty = MAP_PROPERTY.EMPTY;
 
 
 	// Use this for initialization
 	void Start () {
 	}
+
+	public virtual void EnterInteractable() {
+		
+	}
+
+	public virtual void UpInteractable() {
+		
+	}
+
+	public virtual void ExitInteractable() {
+
+	}
+
+	void OnMouseEnter() {
+		EnterInteractable();
+	}
+
+	void OnMouseExit() {
+		ExitInteractable();
+	}
+
+	void OnMouseUp() {
+		UpInteractable();
+	}
+
 }

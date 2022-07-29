@@ -60,17 +60,15 @@ public class MapObject : MonoBehaviour {
 
 
 	public virtual void OverInteractable() {
-		if (height == m_playerTile.height) {
-			if (Mathf.Abs(m_playerTile.row - row) <= 1 && Mathf.Abs(m_playerTile.col - col) <= 1) {
-				foreach (Material material in m_materialList) {
-					material.shader = m_shader;
-					material.SetColor("_lineColor", out_color);
-					material.SetInt("_lineWidth", out_width);
-				}
-			} else {
-				foreach (Material material in m_materialList) {
-					material.shader = m_standardShader;
-				}
+		if (Mathf.Abs(m_playerTile.row - row) <= 1 && Mathf.Abs(m_playerTile.col - col) <= 1) {
+			foreach (Material material in m_materialList) {
+				material.shader = m_shader;
+				material.SetColor("_lineColor", out_color);
+				material.SetInt("_lineWidth", out_width);
+			}
+		} else {
+			foreach (Material material in m_materialList) {
+				material.shader = m_standardShader;
 			}
 		}
 	}

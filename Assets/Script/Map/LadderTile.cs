@@ -20,4 +20,8 @@ public class LadderTile : MapObject {
     }
   }
 
+  public override void OverInteractable() {
+    base.OverInteractable();
+  }
+
 }

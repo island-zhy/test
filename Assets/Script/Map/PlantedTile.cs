@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class PlantedTile : MapObject {
 
-	[SerializeField]
-	private Sprite _plantedSprite;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  public override void EnterInteractable() {
+    //高亮显示
+  }
 
-	void OnMouseDown() {
-		this.GetComponent<SpriteRenderer>().sprite = _plantedSprite;
-	}
+  public override void ExitInteractable() {
+    //取消高亮
+  }
+
+  public override void UpInteractable() {
+    //正常的交互逻辑
+  }
 }

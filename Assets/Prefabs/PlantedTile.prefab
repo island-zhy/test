@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mapProperty: 1
+  m_shader: {fileID: 0}
 --- !u!212 &212570378405348528
 SpriteRenderer:
   m_ObjectHideFlags: 1

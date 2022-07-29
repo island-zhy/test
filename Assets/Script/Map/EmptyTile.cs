@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EmptyTile : MapObject {
-  void Start() {
+  public override void Start() {
     this.gameObject.SetActive(false);
   }
 

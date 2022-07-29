@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: 改名 Tile
 public class MapObject : MonoBehaviour {
 
 	[SerializeField]
@@ -16,7 +17,8 @@ public class MapObject : MonoBehaviour {
 	private int m_row;
 	private int m_col;
 	//private bool m_ifOnSecondFloor;
-	public enum MAP_PROPERTY {
+
+	public enum MAP_PROPERTY {  // TODO: 改名 TileType
     EMPTY = 0,
 		PLANT = 1,
 		LADDER = 2,
@@ -24,35 +26,21 @@ public class MapObject : MonoBehaviour {
 	}
 
 	public int row {
-		get {
-			return m_row;
-		}
-		set {
-			m_row = value;
-		}
+		get { return m_row; }
+		set { m_row = value; }
 	} 
 
 	public int col {
-		get {
-			return m_col;
-		}
-		set {
-			m_col = value;
-		}
+		get { return m_col; }
+		set { m_col = value; }
 	}
 
 	public float height {
-		get {
-			return m_height;
-		}
-		set {
-			m_height = value;
-		}
+		get { return m_height; }
+		set { m_height = value; }
 	}
 
-
 	public MAP_PROPERTY m_mapProperty = MAP_PROPERTY.EMPTY;
-
 
 	public virtual void OverInteractable() {
 		if (height == m_playerTile.height) {
@@ -83,6 +71,7 @@ public class MapObject : MonoBehaviour {
 	}
 
 	// Use this for initialization
+  // QUEST: why is this virtual?
 	public virtual void Start() {
 		m_player = GameObject.FindGameObjectWithTag("Player");
 		m_playerTile = m_player.GetComponent<PlayerTile>();

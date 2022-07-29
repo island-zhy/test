@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FacingCamera : MonoBehaviour {
   private List<Transform> childs;
+
   void Start() {
     childs = new List<Transform>();
     for (int i = 0; i < transform.childCount; i++) {

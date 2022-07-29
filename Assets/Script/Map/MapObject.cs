@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MapObject : MonoBehaviour {
 
+	[SerializeField]
+	protected Shader m_shader;
+
+	protected GameObject player;
+	protected PlayerTile m_player;
+	private Material m_material;
+	private Shader m_standardShader;
 
 	private int m_row;
 	private int m_col;
@@ -38,10 +45,14 @@ public class MapObject : MonoBehaviour {
 
 
 	public virtual void OverInteractable() {
-		
+		if (Mathf.Abs(m_player.row - row) <= 1 && Mathf.Abs(m_player.col - col) <= 1) {
+			m_material.shader = m_shader;
+		} else {
+			m_material.shader = m_standardShader;
+		}
 	}
-	public virtual void ExitInteractable() {	
-
+	public virtual void ExitInteractable() {
+		m_material.shader = m_standardShader;
 	}
 	public virtual void UpInteractable() {
 		
@@ -61,6 +72,10 @@ public class MapObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+		player = GameObject.FindGameObjectWithTag("Player");
+		m_player = player.GetComponent<PlayerTile>();
+		m_material = GetComponent<SpriteRenderer>().material;
+		m_standardShader = m_material.shader;
 	}
 
 }

@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795b6a73d5066b84e9c40526b1f9afee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shader: {fileID: 4800000, guid: 4db8932bdac9ef04e89761d377f6fb45, type: 3}
   m_mapProperty: 1
-  m_shader: {fileID: 0}
 --- !u!212 &212570378405348528
 SpriteRenderer:
   m_ObjectHideFlags: 1

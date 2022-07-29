@@ -8,5 +8,10 @@ public class PlantedTile : MapObject {
     //plant
   }
 
+  public override void OverInteractable() {
+    if (this.height == m_playerTile.height) {
+      base.OverInteractable();
+    }    
+  }
 
 }

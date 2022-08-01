@@ -1,0 +1,18 @@
+{
+  "itemDefs": [
+    {
+      "name": "testItem",
+      "displayName": "A Test Item..",
+      "type": 0,
+      "info": "This is just a dummy nothing as you can see, it of course does no any effects :)",
+      "countLimit": -1
+    },
+    {
+      "name": "bomb",
+      "displayName": "Art is Boom!",
+      "type": 3,
+      "info": "Yet another item, but more threatening",
+      "countLimit": 10
+    }
+  ]
+}

@@ -65,11 +65,11 @@ public class MapController : MonoBehaviour
     if (!File.Exists(m_upMapFilePath))
     {
       m_jsonMap = new JsonMap(mapScaleY, mapScaleX);
-      JsonUtil<JsonMap>.Save(m_upMapFilePath, m_jsonMap);
+      JsonUtil.Save(m_upMapFilePath, m_jsonMap);
     }
 
     // 加载地图描述并转化为Unity中的地图对象
-    m_jsonMap = JsonUtil<JsonMap>.Load(m_upMapFilePath);
+    m_jsonMap = JsonUtil.Load<JsonMap>(m_upMapFilePath);
     for (int i = 0; i < mapScaleY; i++)
     {
       for (int j = 0; j < mapScaleX; j++)

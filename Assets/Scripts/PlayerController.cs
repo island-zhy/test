@@ -27,12 +27,12 @@ public class PlayerController : MonoBehaviour {
     if (move != Vector3.zero && !isMoving)
     {
       isMoving = true;
-      AudioManager.Play(AudioNames.PlayerMove);
+      AudioManager.Play(AudioName.PlayerMove);
     }
     else if (move == Vector3.zero && isMoving)
     {
       isMoving = false;
-      AudioManager.Stop(AudioNames.PlayerMove);
+      AudioManager.Stop(AudioName.PlayerMove);
     }
   }
 

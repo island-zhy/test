@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyParameter {
-	 
-}
 
 public class FSM : MonoBehaviour {
 	public enum STATE_TYPE {

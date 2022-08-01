@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 using UnityEngine;
 
 // Json配置文件通用读写
-public class JsonUtil<T>
+public class JsonUtil
 {
-  public static T Load(string filePath)
+  public static T Load<T>(string filePath)
   {
     using (StreamReader sr = new StreamReader(filePath))
     {
@@ -19,7 +19,7 @@ public class JsonUtil<T>
   {
     using (StreamWriter sw = new StreamWriter(filePath))
     {
-      try { sw.WriteLine(JsonConvert.SerializeObject(data)); }
+      try { sw.WriteLine(JsonConvert.SerializeObject(data, Formatting.Indented)); }
       catch (Exception e) { Debug.LogError(e); }
     }
   }

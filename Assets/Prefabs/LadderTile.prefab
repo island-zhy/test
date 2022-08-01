@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273ca64300e8e544aa5159e038137930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_shader: {fileID: 4800000, guid: b77b21a1cef69a441a8bcacbb10439c9, type: 3}
+  m_shader: {fileID: 4800000, guid: 4db8932bdac9ef04e89761d377f6fb45, type: 3}
   m_mapProperty: 2
 --- !u!212 &212283316895739678
 SpriteRenderer:

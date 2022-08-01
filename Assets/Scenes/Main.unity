@@ -153,6 +153,8 @@ GameObject:
   m_Component:
   - component: {fileID: 438264767}
   - component: {fileID: 438264769}
+  - component: {fileID: 438264770}
+  - component: {fileID: 438264771}
   - component: {fileID: 438264768}
   m_Layer: 0
   m_Name: GlobalEnv
@@ -182,22 +184,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 438264766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761a5815c4698764584f82e794011e67, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ff073dc22e57de4686bacd1a4c49fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 438264769}
-  IsPause: 0
+  audioInfoList:
+  - clip: {fileID: 8300000, guid: d8bb0af4c2269a34cb05ec7ce1db3b36, type: 3}
+    group: {fileID: 243900687632007034, guid: 6d0b3a555dfec8e41a1d68bf44694905, type: 2}
+    volume: 1
+    isAutoPlay: 1
+    isLoop: 1
+  - clip: {fileID: 8300000, guid: 6112078902b6c3b40b4a275143025b43, type: 3}
+    group: {fileID: 243080329646253216, guid: 6d0b3a555dfec8e41a1d68bf44694905, type: 2}
+    volume: 1
+    isAutoPlay: 0
+    isLoop: 0
 --- !u!82 &438264769
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438264766}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8bb0af4c2269a34cb05ec7ce1db3b36, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -267,6 +278,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &438264770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438264766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761a5815c4698764584f82e794011e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 438264769}
+--- !u!114 &438264771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438264766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de50d060f9c5ee4fac126b445d82fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 6d0b3a555dfec8e41a1d68bf44694905, type: 2}
 --- !u!1 &460332984
 GameObject:
   m_ObjectHideFlags: 0

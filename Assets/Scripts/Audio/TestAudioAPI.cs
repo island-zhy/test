@@ -9,25 +9,24 @@ public class TestAudioAPI : MonoBehaviour {
   private StringBuilder sb = new StringBuilder(300);
 
   public AudioSource source;
-  public bool IsPause = false;
+  private bool isPaused = false;
 
   // Use this for initialization
   void Start () {
     _ShowDeviceInfo();
-
     _InspectAudio();
   }
 
   // Update is called once per frame
   void Update () {
     if (Input.GetKeyDown(KeyCode.P)) {
-      IsPause = !IsPause;
-      if (IsPause) { source.UnPause(); }
+      isPaused = !isPaused;
+      if (isPaused) { source.UnPause(); }
       else { source.Pause();  }
     }
 
     if (Input.GetKeyDown(KeyCode.R)) {
-      IsPause = false;
+      isPaused = false;
       source.Stop();
       source.Play();
     }

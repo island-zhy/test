@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: 考虑抽象地命名为 Movable
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
@@ -11,16 +12,11 @@ public class PlayerController : MonoBehaviour {
 
   // 是否处于移动状态
   private bool isMoving;
-  // 移动音效素材
-  public AudioSource sfx_move;
 
-  // Use this for initialization
   void Start () {
-    sfx_move = GetComponent<AudioSource>();
-    sfx_move.loop = true;
+
   }
 
-  // Update is called once per frame
   void Update()
   {
     float inputX = Input.GetAxis("Horizontal");
@@ -31,12 +27,12 @@ public class PlayerController : MonoBehaviour {
     if (move != Vector3.zero && !isMoving)
     {
       isMoving = true;
-      if (!sfx_move.isPlaying) { sfx_move.Play(); }
+      AudioManager.Play(AudioNames.PlayerMove);
     }
     else if (move == Vector3.zero && isMoving)
     {
       isMoving = false;
-      if (sfx_move.isPlaying) { sfx_move.Stop(); }
+      AudioManager.Stop(AudioNames.PlayerMove);
     }
   }
 

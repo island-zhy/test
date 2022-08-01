@@ -22,28 +22,6 @@ public class JsonMap
   }
 }
 
-// 地图描述的管理器
-public class JsonMapUtil
-{
-  public static JsonMap Load(string filePath)
-  {
-    using (StreamReader sr = new StreamReader(filePath))
-    {
-      try { return JsonConvert.DeserializeObject<JsonMap>(sr.ReadToEnd()); }
-      catch (Exception e) { Debug.LogError(e); }
-    }
-    return null;  // should never reach
-  }
-  public static void Save(string filePath, object data)
-  {
-    using (StreamWriter sw = new StreamWriter(filePath))
-    {
-      try { sw.WriteLine(JsonConvert.SerializeObject(data)); }
-      catch (Exception e) { Debug.LogError(e); }
-    }
-  }
-}
-
 public class MapController : MonoBehaviour
 {
 	public int mapScaleX = 19;
@@ -87,11 +65,11 @@ public class MapController : MonoBehaviour
     if (!File.Exists(m_upMapFilePath))
     {
       m_jsonMap = new JsonMap(mapScaleY, mapScaleX);
-      JsonMapUtil.Save(m_upMapFilePath, m_jsonMap);
+      JsonUtil<JsonMap>.Save(m_upMapFilePath, m_jsonMap);
     }
 
     // 加载地图描述并转化为Unity中的地图对象
-    m_jsonMap = JsonMapUtil.Load(m_upMapFilePath);
+    m_jsonMap = JsonUtil<JsonMap>.Load(m_upMapFilePath);
     for (int i = 0; i < mapScaleY; i++)
     {
       for (int j = 0; j < mapScaleX; j++)

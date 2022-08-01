@@ -29,8 +29,8 @@ public class FSM : MonoBehaviour {
 		m_enemyStateSet = new Dictionary<STATE_TYPE, IState>();
 		m_enemyStateSet = new Dictionary<STATE_TYPE, IState>();
 
-		m_enemyStateSet.Add(STATE_TYPE.IDLE, new IStateIdle(this));
-		m_enemyStateSet.Add(STATE_TYPE.NAVIGATE, new IStateNavigate(this));
+		m_enemyStateSet.Add(STATE_TYPE.IDLE, new IdleState(this));
+		m_enemyStateSet.Add(STATE_TYPE.NAVIGATE, new NavigateState(this));
 
 		m_currentIState = m_enemyStateSet[STATE_TYPE.IDLE];
 	}

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IStateIdle : IState {
+public class IdleState : IState {
 
-  private FSM m_FSMManager;
+  private FSM m_fsmManager;
   private EnemyParameter m_enemyParameter;
 
-  public IStateIdle(FSM fSMManager) {
-    this.m_FSMManager = fSMManager;
-    this.m_enemyParameter = fSMManager.m_enemyParameter;
+  public IdleState(FSM fsmManager) {
+    m_fsmManager = fsmManager;
+    m_enemyParameter = fsmManager.m_enemyParameter;
   }
 
   public void OnEnter() {

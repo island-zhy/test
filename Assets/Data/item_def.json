@@ -1,0 +1,9 @@
+{
+  "item_defs": [
+    0: {
+      "name": "testItem",
+      "displayName": "A Test Item",
+      "info": "This is just a dummy nothing as you can see, it of course does no any effects :)",
+    }
+  ]
+}

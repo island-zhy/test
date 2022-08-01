@@ -57,6 +57,7 @@ public class AudioManager : MonoBehaviour {
   }
 
   void Start () {
+    // 将所有已注册的音频挂载到audioHolder对象上
     foreach (var info in audioInfoList)
     {
       AudioSource source = audioHolder.AddComponent<AudioSource>();

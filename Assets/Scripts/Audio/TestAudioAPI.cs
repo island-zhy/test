@@ -1,24 +1,26 @@
 ﻿using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class TestAudioAPI : MonoBehaviour {
 
   private StringBuilder sb = new StringBuilder(300);
 
-  public AudioSource source;
+  public AudioSource source = null;
   private bool isPaused = false;
 
-  // Use this for initialization
-  void Start () {
+  private void Awake() {
     _ShowDeviceInfo();
-    _InspectAudio();
   }
 
-  // Update is called once per frame
+  void Start () {
+    source = GetComponent<AudioSource>();
+    if (source != null) { _InspectAudio(); }
+    else { Debug.Log("no AudioSource attached, ignore audio playback test"); }
+  }
+
   void Update () {
+    if (source == null) return;
+
     if (Input.GetKeyDown(KeyCode.P)) {
       isPaused = !isPaused;
       if (isPaused) { source.UnPause(); }
@@ -58,10 +60,9 @@ public class TestAudioAPI : MonoBehaviour {
   }
 
   void _InspectAudio() {
-    float[] buff = new float[2 ^ 10];
+    float[] buff = new float[2 ^ 8];
 
     // 音频片段的控制器
-    source = GetComponent<AudioSource>();
     //source.bypassEffects = true;
     //source.bypassReverbZones = false;
     //source.Play();
@@ -106,8 +107,8 @@ public class TestAudioAPI : MonoBehaviour {
 
     // 所封装的音频片段
     AudioClip clip = source.clip;
-    clip.LoadAudioData();   // 手动控制一些不频繁使用的资源加载, see `preloadAudioData`
-    clip.GetData(buff, 0);  // 读取出samples
+    //clip.LoadAudioData();   // 手动控制一些不频繁使用的资源加载, see `preloadAudioData`
+    //clip.GetData(buff, 0);  // 读取出samples
 
     sb.Length = 0;
     sb.AppendLine("[AudioClip]");
